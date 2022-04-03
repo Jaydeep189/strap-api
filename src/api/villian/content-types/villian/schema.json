@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "villians",
+  "info": {
+    "singularName": "villian",
+    "pluralName": "villians",
+    "displayName": "Villian"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Readers": {
+      "type": "integer"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "villians"
+    }
+  }
+}

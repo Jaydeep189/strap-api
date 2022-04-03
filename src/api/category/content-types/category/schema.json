@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "superheroes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::superhero.superhero",
+      "inversedBy": "categories"
+    },
+    "villians": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::villian.villian",
+      "inversedBy": "categories"
+    }
+  }
+}
